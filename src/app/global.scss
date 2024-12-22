@@ -1,5 +1,38 @@
-*, *::after, *::before {
+@import "./vars.scss";
+
+*,
+*::after,
+*::before {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: $body-padding;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: $global-gap;
+}
+
+
+// Helper classes
+.text_title {
+  font-family: $font-title;
+  font-size: $fontsize-title;
+  margin-bottom: $global-gap;
+  color: $white;
+}
+
+.text_content {
+  font-family: $font-content;
+  font-size: $fontsize-content;
+  color: $white;
 }

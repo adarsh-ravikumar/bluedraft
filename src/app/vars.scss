@@ -3,8 +3,19 @@ $primary-dark: #4A598A;
 $white: #FFFFFF;
 $border-radius: 0.2rem;
 
-$font-title: "Hammersmith One";
-$font-subtitle: "Montserrat";
-$font-content: "Poppins";
+$global-gap: 0.5rem;
 
-$body-padding: 0.3rem;
+$font-title: "Hammersmith One";
+$fontsize-title: clamp(20px, 1.5vw, 25px);
+
+$font-subtitle: "Montserrat";
+
+$font-content: "Poppins";
+$fontsize-content: clamp(15px, 1vw, 18px);
+
+
+$body-padding: clamp(15px, 0.75vw, 20px);
+
+
+$width-mobile: 510px;
+$width-tablet: 1000px;
