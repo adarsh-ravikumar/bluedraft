@@ -1,5 +1,9 @@
+import WhatWeDo from "@/section/what_we_do/wwd";
+
 export default function Home() {
   return (
-    <h1>Hello World!</h1>
+    <div className="page">    
+      <WhatWeDo />
+    </div>
   );
 }
