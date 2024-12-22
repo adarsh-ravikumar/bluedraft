@@ -2,7 +2,7 @@
 // bad practice, but did not find another fix
 // works good enough since static site
 
-import ParalaxImageCard from "@/components/paralax_img_card/card";
+import ImageCard from "@/components/image_card/image_card";
 import styles from "./wwd.module.scss";
 import React, { useEffect } from "react";
 
@@ -48,7 +48,7 @@ export default function WhatWeDo() {
             <div className={styles.cards}>
                 {cards.map((card) => {
                     return (
-                        <ParalaxImageCard
+                        <ImageCard
                             key={card.title}
                             title={card.title}
                             subtitle={card.content}
