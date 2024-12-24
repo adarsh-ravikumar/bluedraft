@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./card.module.scss";
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
 export default function ImageCard(props: Props) {
     return (
         <div className={styles.card}>
-            <img
+            <Image
                 className={styles.card__image}
                 src={props.image}
                 alt="card image"
