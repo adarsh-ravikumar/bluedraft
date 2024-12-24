@@ -1,10 +1,5 @@
-"use client";
-// bad practice, but did not find another fix
-// works good enough since static site
-
 import ImageCard from "@/components/image_card/image_card";
 import styles from "./wwd.module.scss";
-import React, { useEffect } from "react";
 
 export default function WhatWeDo() {
     const content: string =
