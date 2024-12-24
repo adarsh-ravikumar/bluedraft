@@ -1,11 +1,12 @@
 import styles from "./banner.module.scss";
+import Image from "next/image";
 
 export default function Banner() {
     return (
         <div className={styles.banner}>
             <div className={styles.content}>
                 <div className={styles.item}>
-                    <img src="/assets/hero/star.svg" alt="experience" />
+                    <Image src="/assets/hero/star.svg" alt="experience" />
                     <div className={styles.text}>
                         <p className={styles.title}>10+ Years</p>
                         <p className={styles.subtitle}>of experience</p>
@@ -13,7 +14,7 @@ export default function Banner() {
                 </div>
 
                 <div className={styles.item}>
-                    <img src="/assets/hero/quality.svg" alt="quality" />
+                    <Image src="/assets/hero/quality.svg" alt="quality" />
                     <div className={styles.text}>
                         <p className={styles.title}>Quality</p>
                         <p className={styles.subtitle}>assured</p>
@@ -21,7 +22,7 @@ export default function Banner() {
                 </div>
 
                 <div className={styles.item}>
-                    <img src="/assets/hero/time.svg" alt="time" />
+                    <Image src="/assets/hero/time.svg" alt="time" />
                     <div className={styles.text}>
                         <p className={styles.title}>On Time</p>
                         <p className={styles.subtitle}>delivery</p>
@@ -32,7 +33,7 @@ export default function Banner() {
                 <p className={styles.subtitle}>We Make</p>
                 <div className={styles.title}>
                     <div className="text">Steel C</div>
-                    <img
+                    <Image
                         className={styles.cog}
                         src="/assets/hero/cog.svg"
                         alt="cog"
