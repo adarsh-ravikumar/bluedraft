@@ -10,7 +10,7 @@ interface Props {
 export default function ImageCard(props: Props) {
     return (
         <div className={styles.card}>
-            <Image
+            <img
                 className={styles.card__image}
                 src={props.image}
                 alt="card image"
