@@ -1,0 +1,27 @@
+@import "../../app/vars.scss";
+
+.section__wwd {
+    display: flex;
+    gap: $global-gap;
+    flex-direction: column;
+
+    .wwd__content {
+        padding: $body-padding;
+        border-radius: $border-radius;
+        background: $primary;
+    }
+}
+
+.cards {
+    display: grid;
+    gap: $global-gap;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media only screen and (max-width: $width-tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media only screen and (max-width: $width-mobile) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
