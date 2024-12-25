@@ -10,12 +10,17 @@
     }
 }
 
+
 .banner {
     width: 100%;
     aspect-ratio: 2.5;
     overflow: hidden;
     position: relative;
     border-radius: $banner-border-radius;
+    
+    img {
+        position: static !important;
+    }
 
     @media only screen and (max-width: $width-tablet) {
         aspect-ratio: 1.5;
@@ -99,7 +104,8 @@
             }
 
             .cog {
-                width: clamp(30px, 3vw, 70px);
+                
+                width: clamp(30px, 3vw, 70px) !important;
                 margin-top: 1%;
                 animation: spin infinite 5s linear;
             }
@@ -188,7 +194,7 @@
             gap: 0.5rem;
 
             img {
-                width: clamp(30px, 3vw, 35px);
+                width: clamp(30px, 3vw, 35px) !important;
             }
 
             .text {
