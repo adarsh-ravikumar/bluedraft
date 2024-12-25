@@ -1,65 +1,32 @@
 @import "../../app/vars.scss";
 
-@keyframes spin {
-    0% {
-        rotate: 0deg
-    }
 
-    100% {
-        rotate: 1turn;
-    }
-}
 
 
 .banner {
     width: 100%;
     aspect-ratio: 2.5;
+
+    * {
+        white-space: nowrap;
+    }
+
     overflow: hidden;
     position: relative;
     border-radius: $border-radius;
-    
+
     img {
         position: static !important;
     }
 
     @media only screen and (max-width: $width-tablet) {
         aspect-ratio: 1.5;
-
-        .overlay {
-            top: 40% !important;
-            gap: 0.1rem !important;
-        }
-
-        .content {
-            white-space: nowrap;
-            left: 50%;
-            transform: translateX(-50%);
-            width: fit-content;
-
-            $size: $banner-border-radius;
-
-            &::before {
-                top: calc(100% - $size ) !important;
-                right: calc(-1*0.3rem - $size) !important;
-                background-image: radial-gradient(circle at 100% 100%, transparent $size, white calc($size + 1px), ) !important;
-                box-shadow: calc(-1 * $size + 4px) calc(-1 * $size - 2px) 0 2px white !important;
-                rotate: -90deg !important;
-            }
-        }
-
     }
 
     @media only screen and (max-width: $width-mobile) {
         aspect-ratio: 1;
-
-        .overlay {
-            top: 35% !important;
-
-            button {
-                padding: 0.6rem 2rem !important;
-            }
-        }
     }
+
 
     &::after {
         content: "";
@@ -74,10 +41,24 @@
 
 
     .overlay {
+        @media only screen and (max-width: $width-tablet) {
+            top: 40% !important;
+            gap: 0.1rem !important;
+        }
+
+        @media only screen and (max-width: $width-mobile) {
+            top: 35% !important;
+
+            button {
+                padding: 0.6rem 2rem !important;
+            }
+        }
+
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+
         z-index: 3;
         color: $white;
 
@@ -92,21 +73,28 @@
         }
 
         .title {
-            font-family: $font-content;
-            font-weight: 700;
-            font-size: clamp(30px, 4vw, 80px);
             display: flex;
             align-items: center;
             flex-wrap: nowrap;
 
-            * {
-                white-space: nowrap;
-            }
+            font-family: $font-content;
+            font-size: clamp(30px, 4vw, 80px);
+            font-weight: 700;
 
             .cog {
-                
                 width: clamp(30px, 3vw, 70px) !important;
                 margin-top: 1%;
+
+                @keyframes spin {
+                    from {
+                        rotate: 0deg;
+                    }
+
+                    to {
+                        rotate: 1turn;
+                    }
+                }
+
                 animation: spin infinite 5s linear;
             }
         }
@@ -115,12 +103,16 @@
             font-family: $font-title;
             font-size: $fontsize-content;
             font-weight: 500;
+
             padding: 0.75rem 3rem;
             margin-top: 1rem;
+
             background: $white;
+
             outline: transparent;
             border: none;
             border-radius: $banner-border-radius;
+
             cursor: pointer;
 
             scale: 100%;
@@ -141,50 +133,50 @@
         position: absolute;
         right: 0;
         bottom: 0;
+
         display: flex;
         z-index: 5;
-        background: $primary;
+        gap: 1.2rem;
+
         padding: 1rem;
 
-        gap: 1.2rem;
+        background: $primary;
         border-radius: $banner-border-radius;
         box-shadow: 0 0 0 0.3rem white;
-
-        $size: $banner-border-radius;
 
         transform-style: preserve-3d;
 
         &::before {
             content: "";
-            width: $size;
+
+            width: $banner-border-radius;
             aspect-ratio: 1;
+
             position: absolute;
-            top: calc(-1*0.3rem - $size);
+            top: calc(-1*0.3rem - $banner-border-radius);
             right: 0;
 
-            background-image: radial-gradient(circle at 100% 100%, transparent $size, white calc($size + 1px));
-            box-shadow: 0 calc(-1 * $size - 2px) 0 2px white;
+            transform: translateZ(-1px);
             rotate: 180deg;
 
-
-            transform: translateZ(-1px);
+            background-image: radial-gradient(circle at 100% 100%, transparent $banner-border-radius, white calc($banner-border-radius + 1px));
+            box-shadow: 0 calc(-1 * $banner-border-radius - 2px) 0 2px white;
         }
 
         &::after {
             content: "";
-            width: $size;
+            width: $banner-border-radius;
             aspect-ratio: 1;
             position: absolute;
 
             bottom: 0;
-            left: calc(-1*0.3rem - $size);
-
-            background-image: radial-gradient(circle at 100% 100%, transparent $size, white calc($size + 1px));
-            box-shadow: calc(-1 * $size - 2px) 0 0 2px white;
-            rotate: 180deg;
-
+            left: calc(-1*0.3rem - $banner-border-radius);
 
             transform: translateZ(-1px);
+            rotate: 180deg;
+
+            background-image: radial-gradient(circle at 100% 100%, transparent $banner-border-radius, white calc($banner-border-radius + 1px));
+            box-shadow: calc(-1 * $banner-border-radius - 2px) 0 0 2px white;
         }
 
         .item {
@@ -202,6 +194,7 @@
                 flex-direction: column;
                 color: $white;
                 align-items: center;
+
                 font-family: $font-title;
 
                 .title {
@@ -211,6 +204,20 @@
                 .subtitle {
                     font-size: clamp(12px, 1.5vw, 15px);
                 }
+            }
+        }
+
+        @media only screen and (max-width: $width-tablet) {
+            left: 50%;
+            transform: translateX(-50%);
+            width: fit-content;
+
+            &::before {
+                top: calc(100% - $banner-border-radius ) !important;
+                right: calc(-1*0.3rem - $banner-border-radius) !important;
+                background-image: radial-gradient(circle at 100% 100%, transparent $banner-border-radius, white calc($banner-border-radius + 1px), ) !important;
+                box-shadow: calc(-1 * $banner-border-radius + 4px) calc(-1 * $banner-border-radius - 2px) 0 2px white !important;
+                rotate: -90deg !important;
             }
         }
     }
