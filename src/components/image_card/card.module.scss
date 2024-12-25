@@ -22,8 +22,10 @@
     .card__image {
         width: 100%;
         aspect-ratio: 1.2;
+
         object-fit: cover;
         object-position: 50% 50%;
+
         border-radius: $border-radius;
     }
 
@@ -32,8 +34,10 @@
         border-radius: $border-radius;
         background-color: $primary;
         color: $white;
+
         padding: 1rem $global-gap;
         text-align: center;
+
         height: 100%;
     }
 }
