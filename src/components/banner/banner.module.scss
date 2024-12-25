@@ -16,7 +16,7 @@
     aspect-ratio: 2.5;
     overflow: hidden;
     position: relative;
-    border-radius: $banner-border-radius;
+    border-radius: $border-radius;
     
     img {
         position: static !important;
@@ -40,7 +40,7 @@
 
             &::before {
                 top: calc(100% - $size ) !important;
-                right: calc(-1*$global-gap - $size) !important;
+                right: calc(-1*0.3rem - $size) !important;
                 background-image: radial-gradient(circle at 100% 100%, transparent $size, white calc($size + 1px), ) !important;
                 box-shadow: calc(-1 * $size + 4px) calc(-1 * $size - 2px) 0 2px white !important;
                 rotate: -90deg !important;
@@ -148,7 +148,7 @@
 
         gap: 1.2rem;
         border-radius: $banner-border-radius;
-        box-shadow: 0 0 0 $global-gap white;
+        box-shadow: 0 0 0 0.3rem white;
 
         $size: $banner-border-radius;
 
@@ -159,7 +159,7 @@
             width: $size;
             aspect-ratio: 1;
             position: absolute;
-            top: calc(-1*$global-gap - $size);
+            top: calc(-1*0.3rem - $size);
             right: 0;
 
             background-image: radial-gradient(circle at 100% 100%, transparent $size, white calc($size + 1px));
@@ -177,7 +177,7 @@
             position: absolute;
 
             bottom: 0;
-            left: calc(-1*$global-gap - $size);
+            left: calc(-1*0.3rem - $size);
 
             background-image: radial-gradient(circle at 100% 100%, transparent $size, white calc($size + 1px));
             box-shadow: calc(-1 * $size - 2px) 0 0 2px white;
