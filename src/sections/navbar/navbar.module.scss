@@ -1,0 +1,50 @@
+@import "../../app/vars.scss";
+
+.navbar {
+  background: $primary;
+  border-radius: $border-radius;
+  padding: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .navbar__logo {
+    position: static !important;
+    height: 5em !important;
+    width: 10em !important;
+
+    @media (max-width: 768px) {
+        height: 3em !important;
+        width: 10em !important;
+    }
+
+    @media (max-width: 480px) {
+        height: 3em !important;
+        width: 4em !important;
+    }
+  }
+
+  .link__container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60rem;
+    list-style-type: none;
+
+    .link__element a {
+      color: $white;
+      font-family: $font-content;
+      font-size: $fontsize-content;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media screen and (max-width: 768px) {
+      .mobile__link__menu {
+        display: block;
+      }
+      display: none;
+    }
+  }
+}
