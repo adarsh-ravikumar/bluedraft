@@ -1,15 +1,14 @@
 import styles from "./banner.module.scss";
-import Image from "next/image";
+import img from "next/image";
 
 export default function Banner() {
     return (
         <div className={styles.banner}>
             <div className={styles.content}>
                 <div className={styles.item}>
-                    <Image
+                    <img
                         src="/assets/hero/star.svg"
                         alt="experience"
-                        fill
                     />
                     <div className={styles.text}>
                         <p className={styles.title}>10+ Years</p>
@@ -18,10 +17,9 @@ export default function Banner() {
                 </div>
 
                 <div className={styles.item}>
-                    <Image
+                    <img
                         src="/assets/hero/quality.svg"
                         alt="quality"
-                        fill
                     />
                     <div className={styles.text}>
                         <p className={styles.title}>Quality</p>
@@ -30,10 +28,9 @@ export default function Banner() {
                 </div>
 
                 <div className={styles.item}>
-                    <Image
+                    <img
                         src="/assets/hero/time.svg"
                         alt="time"
-                        fill
                     />
                     <div className={styles.text}>
                         <p className={styles.title}>On Time</p>
@@ -45,8 +42,7 @@ export default function Banner() {
                 <p className={styles.subtitle}>We Make</p>
                 <div className={styles.title}>
                     <div className="text">Steel C</div>
-                    <Image
-                        fill
+                    <img
                         className={styles.cog}
                         src="/assets/hero/cog.svg"
                         alt="cog"

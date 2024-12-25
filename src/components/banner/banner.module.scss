@@ -15,10 +15,6 @@
     position: relative;
     border-radius: $border-radius;
 
-    img {
-        position: static !important;
-    }
-
     @media only screen and (max-width: $width-tablet) {
         aspect-ratio: 1.5;
     }
@@ -82,7 +78,7 @@
             font-weight: 700;
 
             .cog {
-                width: clamp(30px, 3vw, 70px) !important;
+                width: clamp(30px, 3vw, 70px);
                 margin-top: 1%;
 
                 @keyframes spin {
@@ -186,7 +182,7 @@
             gap: 0.5rem;
 
             img {
-                width: clamp(30px, 3vw, 35px) !important;
+                width: clamp(30px, 3vw, 35px);
             }
 
             .text {
