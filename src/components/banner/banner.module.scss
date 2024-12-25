@@ -1,0 +1,227 @@
+@import "../../app/vars.scss";
+
+
+
+
+.banner {
+    width: 100%;
+    aspect-ratio: 2.5;
+
+    * {
+        white-space: nowrap;
+    }
+
+    overflow: hidden;
+    position: relative;
+    border-radius: $border-radius;
+
+    @media only screen and (max-width: $width-tablet) {
+        aspect-ratio: 1.5;
+    }
+
+    @media only screen and (max-width: $width-mobile) {
+        aspect-ratio: 1;
+    }
+
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background: rgba(6, 57, 80, 0.637);
+    }
+
+
+    .overlay {
+        @media only screen and (max-width: $width-tablet) {
+            top: 40% !important;
+            gap: 0.1rem !important;
+        }
+
+        @media only screen and (max-width: $width-mobile) {
+            top: 35% !important;
+
+            button {
+                padding: 0.6rem 2rem !important;
+            }
+        }
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        z-index: 3;
+        color: $white;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+
+        .subtitle {
+            font-family: $font-title;
+            font-size: clamp(15px, 1.5vw, 30px);
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+
+            font-family: $font-content;
+            font-size: clamp(30px, 4vw, 80px);
+            font-weight: 700;
+
+            .cog {
+                width: clamp(30px, 3vw, 70px);
+                margin-top: 1%;
+
+                @keyframes spin {
+                    from {
+                        rotate: 0deg;
+                    }
+
+                    to {
+                        rotate: 1turn;
+                    }
+                }
+
+                animation: spin infinite 5s linear;
+            }
+        }
+
+        button {
+            font-family: $font-title;
+            font-size: $fontsize-content;
+            font-weight: 500;
+
+            padding: 0.75rem 3rem;
+            margin-top: 1rem;
+
+            background: $white;
+
+            outline: transparent;
+            border: none;
+            border-radius: $banner-border-radius;
+
+            cursor: pointer;
+
+            scale: 100%;
+            transition: scale 0.2s ease-out;
+
+            &:hover {
+                scale: 110%;
+            }
+
+            &:active {
+                scale: 90%;
+            }
+        }
+
+    }
+
+    .content {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        display: flex;
+        z-index: 5;
+        gap: 1.2rem;
+
+        padding: 1rem;
+
+        background: $primary;
+        border-radius: $banner-border-radius;
+        box-shadow: 0 0 0 0.3rem white;
+
+        transform-style: preserve-3d;
+
+        &::before {
+            content: "";
+
+            width: $banner-border-radius;
+            aspect-ratio: 1;
+
+            position: absolute;
+            top: calc(-1*0.3rem - $banner-border-radius);
+            right: 0;
+
+            transform: translateZ(-1px);
+            rotate: 180deg;
+
+            background-image: radial-gradient(circle at 100% 100%, transparent $banner-border-radius, white calc($banner-border-radius + 1px));
+            box-shadow: 0 calc(-1 * $banner-border-radius - 2px) 0 2px white;
+        }
+
+        &::after {
+            content: "";
+            width: $banner-border-radius;
+            aspect-ratio: 1;
+            position: absolute;
+
+            bottom: 0;
+            left: calc(-1*0.3rem - $banner-border-radius);
+
+            transform: translateZ(-1px);
+            rotate: 180deg;
+
+            background-image: radial-gradient(circle at 100% 100%, transparent $banner-border-radius, white calc($banner-border-radius + 1px));
+            box-shadow: calc(-1 * $banner-border-radius - 2px) 0 0 2px white;
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+
+            img {
+                width: clamp(30px, 3vw, 35px);
+            }
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                color: $white;
+                align-items: center;
+
+                font-family: $font-title;
+
+                .title {
+                    font-size: clamp(14px, 2vw, 25px);
+                }
+
+                .subtitle {
+                    font-size: clamp(12px, 1.5vw, 15px);
+                }
+            }
+        }
+
+        @media only screen and (max-width: $width-tablet) {
+            left: 50%;
+            transform: translateX(-50%);
+            width: fit-content;
+
+            &::before {
+                top: calc(100% - $banner-border-radius ) !important;
+                right: calc(-1*0.3rem - $banner-border-radius) !important;
+                background-image: radial-gradient(circle at 100% 100%, transparent $banner-border-radius, white calc($banner-border-radius + 1px), ) !important;
+                box-shadow: calc(-1 * $banner-border-radius + 4px) calc(-1 * $banner-border-radius - 2px) 0 2px white !important;
+                rotate: -90deg !important;
+            }
+        }
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+}
