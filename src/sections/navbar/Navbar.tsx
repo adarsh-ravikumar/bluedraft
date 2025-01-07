@@ -1,44 +1,68 @@
+"use client";
 import Link from "next/link";
-import Image from "next/image";
 import styles from "./navbar.module.scss";
+import { useState } from "react";
 
 export default function Navbar() {
+  const items: string[] = [
+    "Home",
+    "About us",
+    "Services",
+    "Projects",
+    "Careers",
+  ];
+
+  const [navOpen, setNavOpen] = useState(false);
+
   return (
-    <div className={styles.navbar}>
+    <nav className={styles.nav}>
       <div>
-        <Image
-          className={styles.navbar__logo}
-          src="/bd_name_logo_white.png"
+        <img
+          className={styles.nav__logo}
+          src={navOpen ? "/bd_name_logo_white.png" : "/bd_name_logo_blue.png"}
           alt="company logo"
-          layout="fill"
-          objectFit="contain"
-        />
+        ></img>
       </div>
       <div>
-        <ul className={styles.link__container}>
-          <li className={styles.link__element}>
-            <Link href={""}>Home</Link>
-          </li>
-          <li className={styles.link__element}>
-            <Link href={""}>About us </Link>
-          </li>
-          <li className={styles.link__element}>
-            <Link href={""}>Services</Link>
-          </li>
-          <li className={styles.link__element}>
-            <Link href={""}>Projects</Link>
-          </li>
-          <li className={styles.link__element}>
-            <Link href={""}>Careers</Link>
-          </li>
-          <li className={styles.link__element}>
-            <Link href={""}>Contact us</Link>
+        <ul
+          className={`${styles.nav__links} ${navOpen ? styles.nav__open : ""}`}
+        >
+          {items.map((i) => {
+            return (
+              <li key={i} className={styles.links__li}>
+                <Link
+                  href={`#${i.toLowerCase().replaceAll(" ", "_")}`}
+                  className={styles.li__link}
+                  onClick={() => {
+                    setNavOpen(false);
+                  }}
+                >
+                  {i}
+                </Link>
+                <div className={styles.li__line}></div>
+              </li>
+            );
+          })}
+
+          <li className={styles.links__li}>
+            <Link href="#contact_us">
+              <button className={styles.contact_btn}>Contact Us</button>
+            </Link>
           </li>
         </ul>
+
+        <div
+          className={`${styles.nav__ham} ${navOpen ? styles.ham__open : ""}`}
+          onClick={() => {
+            setNavOpen(!navOpen);
+          }}
+        >
+          <div className={styles.ham__line}></div>
+          <div className={styles.ham__line}></div>
+          <div className={styles.ham__line}></div>
+        </div>
+        <div className={styles.nav__mobile}></div>
       </div>
-      <div className={styles.mobile__link__menu}>
-            M
-      </div>
-    </div>
+    </nav>
   );
 }
