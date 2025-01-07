@@ -11,7 +11,7 @@ export default function WhyUs() {
         </h1>
         <div className={styles.about__us__image__container__mobile}>
           <Image
-            src="/placeholder.png"
+            src="/assets/why_us/why_us.png"
             alt="Picture of the author"
             layout="fill"
             objectFit="cover"
@@ -26,7 +26,7 @@ export default function WhyUs() {
       </div>
       <div className={styles.about__us__image__container}>
         <Image
-          src="/placeholder.png"
+          src="/assets/why_us/why_us.png"
           alt="Picture of the author"
           layout="fill"
           objectFit="cover"
