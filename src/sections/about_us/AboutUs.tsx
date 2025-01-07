@@ -11,7 +11,7 @@ export default function AboutUs() {
         </h1>
         <div className={styles.about__us__image__container__mobile}>
           <Image
-            src="/placeholder.png"
+            src="/assets/about_us/Building_information_modeling.jpg"
             alt="Picture of the author"
             layout="fill"
             objectFit="cover"
@@ -29,7 +29,7 @@ export default function AboutUs() {
       </div>
       <div className={styles.about__us__image__container}>
         <Image
-          src="/placeholder.png"
+          src="/assets/about_us/Building_information_modeling.jpg"
           alt="Picture of the author"
           layout="fill"
           objectFit="cover"
