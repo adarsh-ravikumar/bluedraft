@@ -1,0 +1,30 @@
+@import "../../app/vars.scss";
+.projects {
+    .projects__header {
+        background: $primary;
+        border-radius: $border-radius;
+        padding: $global-gap 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .text {
+            height: fit-content;
+            width: 70%;
+        }
+
+        .image {
+            height: 15rem;
+
+            @media only screen and (max-width: $width-tablet) {
+                margin-inline: auto;
+            }
+        }
+
+        .header__heading {
+            font-size: xx-large;
+            white-space: nowrap;
+        }
+    }
+}
