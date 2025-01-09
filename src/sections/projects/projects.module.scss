@@ -1,0 +1,33 @@
+@import "../../app/vars.scss";
+.projects {
+    .projects__header {
+        background: $primary;
+        border-radius: $border-radius;
+        padding: calc(1.2 * $global-gap);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        .text {
+            height: fit-content;
+            width: 70%;
+        }
+
+        .image {
+            height: 17rem;
+            @media only screen and (max-width: 1050px) {
+                margin-inline: auto;
+            }
+            @media only screen and (max-width: $width-mobile) {
+                max-width: 100%;
+                object-fit: scale-down;
+            }
+        }
+
+        .header__heading {
+            font-size: clamp(1.5rem, 2vw, 2.5rem);
+            margin-bottom: 0.5rem;
+            white-space: nowrap;
+        }
+    }
+}
