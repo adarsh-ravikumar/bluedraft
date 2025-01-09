@@ -1,0 +1,96 @@
+@import "../../app/vars.scss";
+
+.contact__us__container {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr); /* 3 equal columns */
+  grid-template-rows: auto; /* Adjust row height based on content */
+
+  button {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 15px;
+    width: 11em;
+    height: 3.5em;
+    font-family: $font-title;
+    font-size: 20px;
+    font-weight: bold;
+    color: #2e7494;
+    cursor: not-allowed;
+  }
+
+  .reach__out__container {
+    background: $primary;
+    border-radius: $border-radius;
+    grid-column: 1/-1;
+    grid-row: 1;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .client__container {
+    background: $primary;
+    border-radius: $border-radius;
+    grid-column: 1 / 3; /* First column */
+    grid-row: 2; /* Second row */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    .client__text__container {
+      width: 65%;
+    }
+
+    .client__image {
+      width: 25em !important;
+      position: relative !important;
+    }
+
+    @media (max-width: $new-width-tablet) {
+      grid-column: 1/-1;
+      grid-row: 2;
+
+      .client__image {
+        width: 12em !important;
+        position: relative !important;
+      }
+    }
+  }
+
+  .team__container {
+    background: $primary;
+    border-radius: $border-radius;
+    grid-column: 3 / 5; /* Second and third columns */
+    grid-row: 2; /* Second row */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    .team__text__container {
+      width: 65%;
+    }
+
+    .team__image {
+      width: 25em !important;
+      position: relative !important;
+    }
+
+    @media (max-width: $new-width-tablet) {
+      grid-column: 1/-1;
+      grid-row: 3;
+
+      .team__image {
+        width: 12em !important;
+        position: relative !important;
+      }
+    }
+  }
+}

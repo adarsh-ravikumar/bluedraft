@@ -5,11 +5,19 @@
   border-radius: $border-radius;
   padding: 1rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 
   .about__us__content__container {
     width: 50%;
     padding: 0.5rem 0 0.5rem 0;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
 
     .about__us__header {
       margin: 0.5rem 0rem 2.5rem;
@@ -28,11 +36,38 @@
     align-items: center;
     justify-content: center;
 
-    .about__us__image{
-        // width: 500px !important;
-        height: 20rem !important;
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    .about__us__image {
+      width: 100% !important;
+      height: 20rem !important;
+      position: relative !important;
+      margin-left: 4rem !important;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .about__us__image {
+        width: 100% !important;
+        height: auto !important;
         position: relative !important;
-        margin-left: 4rem;
+      }
+    }
+  }
+
+  .about__us__image__container__mobile {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+      width: 100%;
+    }
+
+    .about__us__image__mobile {
+      width: 100% !important;
+      height: auto !important;
+      position: relative !important;  // Changed to relative
     }
   }
 }
