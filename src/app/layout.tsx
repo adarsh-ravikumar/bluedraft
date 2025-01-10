@@ -32,7 +32,7 @@ export default function RootLayout({
         <meta name="description" content="We specialize in providing comprehensive design and detailing solutions for structural steel, catering to projects of all sizes and complexities."/>
         <meta name="robots" content="all" />
         <title>Bluedraft</title>
-        <link rel="shortcut icon" href="/bd_symbol_logo_blue.png" type="image/png" />
+        <link rel="icon" href="/bd_symbol_logo_blue.png" type="image/png" />
 
       </head>
       <body
