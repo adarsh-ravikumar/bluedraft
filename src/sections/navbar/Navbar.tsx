@@ -43,7 +43,7 @@ export default function Navbar() {
       <div>
         <img
           className={styles.nav__logo}
-          src={hamClicked ? "/bd_name_logo_white.png" : "/bd_name_logo_blue.png"}
+          src={navOpen ? "/bd_name_logo_white.png" : "/bd_name_logo_blue.png"}
           alt="company logo"
         ></img>
       </div>
