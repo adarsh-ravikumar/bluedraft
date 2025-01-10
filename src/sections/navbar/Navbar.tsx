@@ -12,14 +12,30 @@ export default function Navbar() {
     "Projects",
   ];
 
+  const [hamClicked, setHamClicked] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
+  const [navVisible, setNavVisible] = useState(false);
 
   useEffect(() => {
     window.addEventListener('resize', (e) => {
       if (window.innerWidth >= 1000) {
-        setNavOpen(false);
+        setHamClicked(false);
       }
     })
+
+    if (hamClicked) {
+      setNavVisible(true);
+      setTimeout(() => {
+        setNavOpen(true);
+      }, 100)
+    }
+
+    if (!hamClicked) {
+      setNavOpen(false);
+      setTimeout(() => {
+        setNavVisible(false);
+      }, 201)
+    }
   })
 
   return (
@@ -27,13 +43,13 @@ export default function Navbar() {
       <div>
         <img
           className={styles.nav__logo}
-          src={navOpen ? "/bd_name_logo_white.png" : "/bd_name_logo_blue.png"}
+          src={hamClicked ? "/bd_name_logo_white.png" : "/bd_name_logo_blue.png"}
           alt="company logo"
         ></img>
       </div>
       <div>
         <ul
-          className={`${styles.nav__links} ${navOpen ? styles.nav__open : ""}`}
+          className={`${styles.nav__links} ${navOpen ? styles.nav__open : ""} ${navVisible ? styles.nav__visible : ''}`}
         >
           {items.map((i) => {
             return (
@@ -42,7 +58,7 @@ export default function Navbar() {
                   href={`#${i.toLowerCase().replaceAll(" ", "_")}`}
                   className={styles.li__link}
                   onClick={() => {
-                    setNavOpen(false);
+                    setHamClicked(false);
                   }}
                 >
                   {i}
@@ -60,9 +76,9 @@ export default function Navbar() {
         </ul>
 
         <div
-          className={`${styles.nav__ham} ${navOpen ? styles.ham__open : ""}`}
+          className={`${styles.nav__ham} ${hamClicked ? styles.ham__open : ""}`}
           onClick={() => {
-            setNavOpen(!navOpen);
+            setHamClicked(!hamClicked);
           }}
         >
           <div className={styles.ham__line}></div>

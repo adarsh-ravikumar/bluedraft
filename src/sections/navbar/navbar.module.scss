@@ -7,10 +7,19 @@
     padding: $global-gap;
     z-index: 5;
 
+    overflow-x: none;
+    max-width: 100svw;
+
+    
+
     .nav__logo {
-        width: clamp(150px, 10vw, 200px);
+        width: clamp(110px, 10vw, 200px);
         position: relative;
         z-index: 6;
+
+        @media screen and (max-width: 320px) {
+            display: none;
+        }
     }
 
     .nav__links {
@@ -78,17 +87,22 @@
         @media only screen and (max-width: $width-tablet) {
             position: absolute;
             top: 0;
-            left: 0;
-
+            right: 0;
+            transform: translateX(100%);
+            
             background: $primary;
             width: 100svw;
             height: 100svh;
 
             z-index: 5;
-
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            display: none;
+            
+            &.nav__visible {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;    
+            }
 
             .links__li {
                 .li__line {
@@ -101,9 +115,9 @@
 
             transition: all 0.2s ease;
 
-            left: 100%;
             &.nav__open {
-                left: 0;
+                display: flex;
+                transform: translateX(0%);
             }
 
             .contact_btn {
