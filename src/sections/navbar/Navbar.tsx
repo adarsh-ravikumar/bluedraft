@@ -1,18 +1,26 @@
 "use client";
 import Link from "next/link";
 import styles from "./navbar.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const items: string[] = [
     "Home",
     "About us",
-    "Services",
+    "What We Do",
+    "Why Us",
     "Projects",
-    "Careers",
   ];
 
   const [navOpen, setNavOpen] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('resize', (e) => {
+      if (window.innerWidth >= 1000) {
+        setNavOpen(false);
+      }
+    })
+  })
 
   return (
     <nav className={styles.nav}>

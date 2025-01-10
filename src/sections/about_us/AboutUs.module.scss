@@ -22,7 +22,9 @@
     .about__us__header {
       margin: 0.5rem 0rem 2.5rem;
       font-weight: 400;
-      font-size: xx-large;
+      font-size: clamp(1.5rem, 2vw, 2.5rem);
+      font-family: $font-content;
+      color: white;
     }
 
     .about__us__content {

@@ -35,7 +35,7 @@ export default function WhatWeDo() {
     ];
 
     return (
-        <div className={styles.section__wwd} id="wwd">
+        <div className={styles.section__wwd} id="what_we_do">
             <div className={styles.wwd__content}>
                 <p className="text_title">What We Do</p>
                 <p className="text_content">{content}</p>

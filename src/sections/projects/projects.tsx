@@ -5,11 +5,11 @@ export default function Projects() {
   const variant: string = "original_dark";
 
   return (
-    <div className={styles.projects}>
+    <div className={styles.projects} id="projects">
       <div className={styles.projects__header}>
         <div className="text">
           <p className="text_title">Projects</p>
-          <p className={`text_content ${styles.header__heading}`}>
+          <p className={styles.header__heading}>
             We Provide Value That <br />
             Exceeds Expectations
           </p>

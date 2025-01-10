@@ -3,10 +3,9 @@ import Navbar from "../navbar/Navbar";
 
 export default function Landing() {
   return (
-    // TODO: Navbar goes here
-    <>
+    <div id="home">
       <Navbar />
       <Banner />
-    </>
+    </div>
   );
 }

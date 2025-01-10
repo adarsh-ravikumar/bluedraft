@@ -3,7 +3,7 @@ import styles from "./ContactUs.module.scss";
 
 export default function ContactUs() {
   return (
-    <div className={styles.contact__us__container}>
+    <div className={styles.contact__us__container} id="contact_us">
       <div className={styles.reach__out__container}>
         <p className="text_title">Reach out</p>
       </div>

@@ -1,17 +1,55 @@
 @import "../../app/vars.scss";
 
-.about__us {
-  background: $primary;
-  border-radius: $border-radius;
-  padding: 1rem;
+.why_us {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  gap: $global-gap;
 
-  @media (max-width: 768px) {
-    display: block;
+  // @media (max-width: 768px) {
+  //   display: block;
+  // }
+
+  .why_us__software {
+    .software__header {
+      background: $primary;
+      border-radius: $border-radius;
+      padding: 1rem;
+      display: grid;
+      place-items: center;
+    }
+
+    .software__logos {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: calc(2 * $global-gap);
+
+      @media (max-width: $width-mobile) {
+        flex-direction: column;
+        gap: calc(3 * $global-gap);
+      }
+
+      margin-block: 2rem;
+      img {
+        height: clamp(40px, 3vw, 85px);
+
+      }
+    }
   }
 
-  .about__us__content__container {
+  
+  .why_us__content {    
+    background: $primary;
+    border-radius: $border-radius;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .why_us__content_text {
     width: 50%;
     padding: 0.5rem 0 0.5rem 0;
 
@@ -19,36 +57,37 @@
       width: 100%;
     }
 
-    .about__us__header {
+    .why_us__header {
       margin: 0.5rem 0rem 2.5rem;
       font-weight: 400;
-      font-size: xx-large;
+      font-size: clamp(1.5rem, 2vw, 2.5rem);
+      font-family: $font-content;
+      color: white;
     }
 
-    .about__us__content {
+    .why_us__content {
       line-height: 1.9;
     }
   }
 
-  .about__us__image__container {
+  .why_us__image__container {
     width: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 
     @media (max-width: 768px) {
       display: none;
     }
 
-    .about__us__image {
-      width: 70% !important;
-      height: 14rem !important;
+    .why_us__image {
+      height: 16rem !important;
       position: relative !important;
       margin-left: 4rem !important;
     }
 
     @media (min-width: 768px) and (max-width: 1024px) {
-      .about__us__image {
+      .why_us__image {
         width: 100% !important;
         height: auto !important;
         position: relative !important;
@@ -56,7 +95,7 @@
     }
   }
 
-  .about__us__image__container__mobile {
+  .why_us__image__container__mobile {
     display: none;
     margin-bottom: 2rem;
 
@@ -65,7 +104,7 @@
       width: 100%;
     }
 
-    .about__us__image__mobile {
+    .why_us__image__mobile {
       width: 100% !important;
       height: auto !important;
       position: relative !important;  // Changed to relative

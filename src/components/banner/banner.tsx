@@ -49,7 +49,7 @@ export default function Banner() {
                     <div className="text">nstruction</div>
                 </div>
                 <p className={styles.subtitle}>Easier</p>
-                <button>{`Let's Talk!`}</button>
+                <a href="#contact_us"><button>{`Let's Talk!`}</button></a>
             </div>
             <video autoPlay muted loop src="/assets/hero/hero.mp4"></video>
         </div>
