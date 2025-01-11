@@ -10,10 +10,18 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  
+  width: 100svw;
 }
 
 body {
   padding: $body-padding;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  width: 100svw;
 }
 
 .page {
@@ -35,4 +43,5 @@ body {
   font-family: $font-content;
   font-size: $fontsize-content;
   color: $white;
+  line-height: 2;
 }

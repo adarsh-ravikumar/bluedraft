@@ -1,0 +1,173 @@
+@import "../../app/vars.scss";
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $global-gap;
+    z-index: 5;
+
+    overflow-x: none;
+    max-width: 100svw;
+
+    
+
+    .nav__logo {
+        width: clamp(110px, 10vw, 200px);
+        position: relative;
+        z-index: 6;
+
+        @media screen and (max-width: 320px) {
+            display: none;
+        }
+    }
+
+    .nav__links {
+        display: flex;
+        gap: calc(5 * $global-gap);
+        align-items: center;
+
+        .links__li {
+            list-style: none;
+
+            .li__link {
+                text-decoration: none;
+                color: $primary-dark;
+                font-family: $font-title;
+                font-size: calc(1.2 * $fontsize-content);
+                width: fit-content;
+
+                @media only screen and (max-width: $width-tablet) {
+                    color: $white;
+                }
+            }
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .li__line {
+                width: 0%;
+                height: 3px;
+                background: $primary-dark;
+                border-radius: $border-radius;
+                transition: width 0.2s ease;
+            }
+
+            &:hover {
+                .li__line {
+                    width: 105%;
+                }
+            }
+        }
+
+        .contact_btn {
+            padding: 1rem 2rem;
+
+            font-family: $font-title;
+            font-size: calc(1.2 * $fontsize-content);
+
+            color: $white;
+            background: $primary;
+
+            border: none;
+            border-radius: $border-radius;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            &:hover {
+                scale: 110%;
+            }
+
+            &:active {
+                scale: 90%;
+            }
+        }
+
+        @media only screen and (max-width: $width-tablet) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translateX(100%);
+            
+            background: $primary;
+            width: 100svw;
+            height: 100svh;
+
+            z-index: 5;
+            display: none;
+            
+            &.nav__visible {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;    
+            }
+
+            .links__li {
+                .li__line {
+                    background: $white;
+                }
+                .li_link {
+                    text-align: center;
+                }
+            }
+
+            transition: all 0.2s ease;
+
+            &.nav__open {
+                display: flex;
+                transform: translateX(0%);
+            }
+
+            .contact_btn {
+                color: $primary-dark;
+                background: $white;
+                padding: 1rem 2rem;
+            }
+        }
+    }
+
+    .nav__ham {
+        @media only screen and (min-width: $width-tablet) {
+            display: none;
+        }
+
+        @media only screen and (max-width: $width-tablet) {
+            display: block;
+        }
+
+        cursor: pointer;
+
+        position: relative;
+        z-index: 6;
+
+        .ham__line {
+            width: 2.5rem;
+            /* height: 2px; */
+            height: 0.2rem;
+            background-color: $primary;
+            margin-block: 0.5rem;
+            border-radius: $border-radius;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+    }
+
+    .ham__open {
+        .ham__line {
+            background: white;
+        }
+        .ham__line:nth-child(1) {
+            transform: rotate(45deg);
+            top: 0.5rem;
+        }
+        .ham__line:nth-child(2) {
+            opacity: 0;
+        }
+        .ham__line:nth-child(3) {
+            transform: rotate(135deg);
+            bottom: 1rem;
+        }
+    }
+}
