@@ -12,13 +12,6 @@ export default function Footer() {
       <div className={styles.footer__content}>
         <div className={styles.content__text}>
           <div className={styles.text__block}>
-            <p className={styles.block__title}>Contact</p>
-            <div className={styles.block__content}>
-              <p>+61 0474049837</p>
-            </div>
-          </div>
-
-          <div className={styles.text__block}>
             <p className={styles.block__title}>Address</p>
 
             <p className={styles.block__content}>
@@ -31,6 +24,14 @@ export default function Footer() {
             <p className={styles.block__content}>
               233 East terrace <br /> South Australia - 5000
             </p>
+          </div>
+
+          <div className={styles.text__block}>
+            <p className={styles.block__title}>Contact</p>
+            <div className={styles.block__content}>
+              <p>Australia: +61 0474049837</p>
+              <p>United States: +1 443-307-0024</p>
+            </div>
           </div>
 
           <div className={styles.text__block}>
